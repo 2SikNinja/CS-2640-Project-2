@@ -7,7 +7,7 @@
 #  This program takes a date from the user and outputs whether its a leap year as well as the day of the week
 #
 #
-#
+#NOTES: USE $t1 for all math when loading new numbers and $t2 to store answers
 #
                .data
 promptMonth:   .asciiz        "Please enter the month: "    #$t3
@@ -47,7 +47,17 @@ main:
 
      move      $t5,      $v0                                #finish year part
 
+               li $t1,   14
+     sub       $t2, $t1, $t3
 
+               li $t1,   12
+     
+
+
+
+               li $v0,   1
+     move      $a0,      $t2                                #just prints out 14-month
+               syscall
 
 
 
